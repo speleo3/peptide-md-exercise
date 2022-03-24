@@ -7,7 +7,7 @@ copies of a short peptide and various cosolvents.
 
 1. Copy `sequence-example.txt` to `sequence.txt` and put your sequence inside
 2. Copy `env-example.sh` to `env.sh` and edit as needed
-3. Type `make` run simulation
+3. Type `make` to run simulation
 4. Analyze `md_out.*` files
 
 ## Requirements

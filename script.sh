@@ -33,9 +33,11 @@ next() {
 get-amino-acid() {
     aa_lower=$(echo $1| tr '[:upper:]' '[:lower:]')
     aa_upper=$(echo $1| tr '[:lower:]' '[:upper:]')
-pymol -ckq \
-    -d "fetch $aa_upper" \
-    -d "save ${aa_lower}_noh.pdb, not hydro"
+
+    pymol -ckq \
+        -d "fetch $aa_upper" \
+        -d "save ${aa_lower}_noh.pdb, not hydro"
+
     # Use ZWITTERION_* termini (failed with autoprompt.py?)
     gmx pdb2gmx -f ${aa_lower}_noh.pdb -o $aa_lower.gro -water spce -ff oplsaa -p topol-$aa_lower.top -ter <<EOF
 1
